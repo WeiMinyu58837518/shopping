@@ -1,0 +1,77 @@
+[ 2017-11-13T17:33:35+08:00 ] ::1 /Home/Cart/cartnumber
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000680s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001315s ]
+SQL: SHOW COLUMNS FROM `tpshop_cart` [ RunTime:0.0038s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\Aliases\shopping\Application\Home\Model\CartModel.class.php 第 85 行.
+
+[ 2017-11-13T17:33:38+08:00 ] ::1 /Home/Cart/cartnumber
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000985s ]
+SQL: SHOW COLUMNS FROM `tpshop_cart` [ RunTime:0.0025s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\Aliases\shopping\Application\Home\Model\CartModel.class.php 第 85 行.
+
+[ 2017-11-13T17:33:40+08:00 ] ::1 /Home/Cart/cartnumber
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000699s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001146s ]
+SQL: SHOW COLUMNS FROM `tpshop_cart` [ RunTime:0.0025s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\Aliases\shopping\Application\Home\Model\CartModel.class.php 第 85 行.
+
+[ 2017-11-13T17:33:42+08:00 ] ::1 /Home/Cart/cartnumber
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001068s ]
+SQL: SHOW COLUMNS FROM `tpshop_cart` [ RunTime:0.0058s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\Aliases\shopping\Application\Home\Model\CartModel.class.php 第 85 行.
+
+[ 2017-11-13T17:34:06+08:00 ] ::1 /Home/Cart/cartnumber
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000715s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001170s ]
+SQL: SHOW COLUMNS FROM `tpshop_cart` [ RunTime:0.0094s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\Aliases\shopping\Application\Home\Model\CartModel.class.php 第 85 行.
+
+[ 2017-11-13T17:34:09+08:00 ] ::1 /Home/Cart/cartnumber
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000526s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000863s ]
+SQL: SHOW COLUMNS FROM `tpshop_cart` [ RunTime:0.0095s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\Aliases\shopping\Application\Home\Model\CartModel.class.php 第 85 行.
+
+[ 2017-11-13T17:35:24+08:00 ] ::1 /Home/Cart/cartnumber
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001153s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001481s ]
+SQL: SHOW COLUMNS FROM `tpshop_cart` [ RunTime:0.0098s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\Aliases\shopping\Application\Home\Model\CartModel.class.php 第 85 行.
+
+[ 2017-11-13T17:35:25+08:00 ] ::1 /Home/Cart/cartnumber
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000631s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000927s ]
+SQL: SHOW COLUMNS FROM `tpshop_cart` [ RunTime:0.0026s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\Aliases\shopping\Application\Home\Model\CartModel.class.php 第 85 行.
+
+[ 2017-11-13T17:35:27+08:00 ] ::1 /Home/Cart/cartnumber
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000539s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000834s ]
+SQL: SHOW COLUMNS FROM `tpshop_cart` [ RunTime:0.0091s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\Aliases\shopping\Application\Home\Model\CartModel.class.php 第 85 行.
+
+[ 2017-11-13T17:35:28+08:00 ] ::1 /Home/Cart/cartnumber
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000576s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000919s ]
+SQL: SHOW COLUMNS FROM `tpshop_cart` [ RunTime:0.0095s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\Aliases\shopping\Application\Home\Model\CartModel.class.php 第 85 行.
+
+[ 2017-11-13T17:35:29+08:00 ] ::1 /Home/Cart/cartnumber
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001928s ]
+SQL: SHOW COLUMNS FROM `tpshop_cart` [ RunTime:0.0030s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\Aliases\shopping\Application\Home\Model\CartModel.class.php 第 85 行.
+

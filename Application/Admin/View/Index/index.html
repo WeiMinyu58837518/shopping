@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>后台管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/main.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap-responsive.min.css">
+    <script src="__PUBLIC__/Public/Admin/Hithcharts/code/lib/jquery-1.8.3.min.js"></script>
+    <script src="__PUBLIC__/Public/Admin/Hithcharts/code/css/highcharts.js"></script>
+    <script src="__PUBLIC__/Public/Admin/Hithcharts/code/css/highcharts-3d.js"></script>
+    <script src="__PUBLIC__/Public/Admin/Hithcharts/code/css/modules/exporting.js"></script>
+</head>
+<body>
+<!-- 上 -->
+<include file="Common/top" />
+<!-- 左 -->
+<include file="Common/left" />
+<!-- 右 -->
+<div class="content">
+    <!-- header -->
+    <div class="header">
+        <h1 class="page-title">好看、高端、大气的方向盘</h1>
+    </div>
+    <!-- highchat show -->
+    <div id="container" style="height: 400px"></div>
+    <!-- footer -->
+    <footer>
+        <hr>
+        <p>© 2017 <a href="javascript:void(0);" target="_blank">ADMIN</a></p>
+    </footer>
+</div>
+</body>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/Admin/js/jquery-1.8.1.min.js"></script>
+<script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+<script src="__PUBLIC__/Admin/js/highcharts.js"></script>
+<script src="__PUBLIC__/Admin/js/exporting.js"></script>
+<script src="__PUBLIC__/Admin/js/draw.js"></script>
+<script>
+    $(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'pie',
+                options3d: {
+                    enabled: true,
+                    alpha: 45
+                }
+            },
+            title: {
+                text: '简数科技每周水果消耗量'
+            },
+            subtitle: {
+                text: 'Highcharts 中的3D环形图'
+            },
+            plotOptions: {
+                pie: {
+                    innerSize: 100,
+                    depth: 45
+                }
+            },
+            series: [{
+                name: '货物金额',
+                data: [
+                    ['香蕉', 8],
+                    ['猕猴桃', 3],
+                    ['桃子', 1],
+                    ['橘子', 6],
+                    ['苹果', 8],
+                    ['梨', 4],
+                    ['柑橘', 4],
+                    ['橙子', 1],
+                    ['葡萄 (串)', 1]
+                ]
+            }]
+        });
+    });
+</script>
+</html>

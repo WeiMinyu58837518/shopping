@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>后台管理系统</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/main.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/page.css">
+    <style type="text/css">
+        table img {
+            max-width: 100px;
+        }
+    </style>
+</head>
+<body>
+<!-- 上 -->
+<include file="Common/top"/>
+<!-- 左 -->
+<include file="Common/left"/>
+<!-- 右 -->
+<div class="content">
+    <div class="header">
+        <h1 class="page-title">商品列表</h1>
+    </div>
+    <div class="well">
+        <!-- search button -->
+        <form action="" method="get" class="form-search">
+            <div class="row-fluid" style="text-align: left;">
+                <div class="pull-left span4 unstyled">
+                    <p> 商品名称：
+                        <input class="input-medium" name="" type="text">
+                    </p>
+                </div>
+            </div>
+            <button type="submit" class="btn">查找</button>
+            <a class="btn btn-primary" onclick="javascript:window.location.href='__CONTROLLER__/goods_add'">新增</a>
+        </form>
+    </div>
+    <div class="well">
+        <!-- table -->
+        <table class="table table-bordered table-hover table-condensed">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>商品数量</th>
+                <th>商品logo</th>
+                <th>添加时间</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <volist name='data' key='k' id='v'>
+                <tr class="success">
+                    <td>{$v['id']}</td>
+                    <td><a href="__CONTROLLER__/goods_detail/id/{$v['id']}">{$v['goods_name']}</a></td>
+                    <td>{$v["goods_price"]}</td>
+                    <td>{$v["goods_number"]}</td>
+                    <td><img src="{$v['goods_small_img']}"></td>
+                    <td>{$v["goods_create_time"]|date="Y-m-d H:i:s",###}</td>
+                    <td><a href="__CONTROLLER__/goods_edit/id/{$v['id']}"> 编辑 </a> <a class="xiangce" href="javascript:void(0);" id="{$v['id']}"> 添加相册图片 </a> <a href="__CONTROLLER__/goodspics/id/{$v.id}" class="goodspics" >管理商品相册</a>    <a class="delete" href="javascript:void(0);" id="{$v['id']}"> 删除 </a></td>
+                </tr>
+            </volist>
+            </tbody>
+        </table>
+        <!-- pagination -->
+        <div class="sabrosus">
+            {$page_html}
+        </div>
+
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <hr>
+        <p>© 2017 <a href="javascript:void(0);" target="_blank">ADMIN</a></p>
+    </footer>
+</div>
+</body>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/Admin/js/jquery-1.8.1.min.js"></script>
+<script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+<!-- 日期控件 -->
+<script src="__PUBLIC__/Admin/js/calendar/WdatePicker.js"></script>
+<script>
+    //ajax删除功能
+    $(".delete").click(function () {
+        var id = $(this).attr("id");
+        if (confirm("确认删除？")) {
+            $.get("__CONTROLLER__/goods_delete/id/" + id, function (a) {
+                if (a == 1) {
+                    alert("删除成功");
+                    location.href = "__CONTROLLER/goods_list";
+                } else {
+                    alert("删除失败");
+                }
+            })
+        }
+    })
+    $(".xiangce").click(function(){
+        var id=$(this).attr("id");
+        location.href="__CONTROLLER__/goods_xiangce/id/"+id;
+    })
+    //onclick="if(confirm('确认删除？')) location.href='__CONTROLLER__/goods_delete/id/{$v['id']}'"
+</script>
+<script>
+//    $(".xiangce").click(function () {
+//        $("#tianjiaxiangce").html("<div class='container'> <h2 class='title'>商品logo上传</h2> <div class='demo'> <a class='btn' id='btnn'>上传图片</a> 最大500KB，支持jpg，gif，png格式。 <ul id='ul_pics' class='ul_pics clearfix'></ul> </div> </div>");
+//    })
+</script>
+</html>

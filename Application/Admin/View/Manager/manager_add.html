@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>后台管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/main.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap-responsive.min.css">
+</head>
+<body>
+<!-- 上 -->
+<include file="Common/top" />
+<!-- 左 -->
+<include file="Common/left" />
+<!-- 右 -->
+<div class="content">
+    <div class="header">
+        <h1 class="page-title">管理员新增</h1>
+    </div>
+
+    <div class="well">
+        <!-- add form -->
+        <form action="" method="post" id="tab">
+            <label>用户名：</label>
+            <input type="text" name="" value="" class="input-xlarge" id="username">
+            <label>昵称</label>
+            <input type="text" name="" value="" class="input-xlarge" id="nickname">
+            <label>密码：</label>
+            <input type="password" name="" value="" class="input-xlarge" id="password">
+            <label>邮箱：</label>
+            <input type="text" name="" value="" class="input-xlarge" id="email">
+            <label>职位：</label>
+            <select name="role_id" id="role_id">
+                <option value="4">普通用户</option>
+                <option value="3">经理</option>
+                <option value="2">主管</option>
+            </select>
+            <label>是否管理员：</label>
+            <select name="status" id="status">
+                <option value="0">否</option>
+                <option value="1">是</option>
+            </select>
+            <br>
+            <button class="btn btn-primary" type="button" id="baocun">保存</button>
+        </form>
+    </div>
+    <!-- footer -->
+    <footer>
+        <hr>
+        <p>© 2017 <a href="javascript:void(0);" target="_blank">ADMIN</a></p>
+    </footer>
+</div>
+</body>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/Admin/js/jquery-1.8.1.min.js"></script>
+<script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+<script>
+$("#baocun").click(function(){
+    var data={
+        username:$("#username").val(),
+        nickname:$("#nickname").val(),
+        password:$("#password").val(),
+        email:$("#email").val(),
+        role_id:$("#role_id").val(),
+        status:$("#status").val()
+    }
+    $.post("__CONTROLLER__/manager_add",data,function(a){
+        if(a==1){
+            alert ("添加成功");
+            location.href="__CONTROLLER__/manager_list"
+        }
+        if(a==0){
+            alert("添加失败");
+        }
+        if(a!=0 && a!=1){
+            alert(a);
+        }
+    })
+})
+</script>
+</html>

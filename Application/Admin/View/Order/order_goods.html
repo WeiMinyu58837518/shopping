@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>订单商品</title>
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/main.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/page.css">
+  <style type="text/css">
+    table img {
+      max-width: 100px;
+    }
+  </style>
+  <script src="__PUBLIC__/Admin/js/jquery-1.8.1.min.js"></script>
+  <script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- 上 -->
+<include file="Common/top"/>
+<!-- 左 -->
+<include file="Common/left" />
+<div class="content">
+  <div class="header">
+    <h1 class="page-title">订单商品</h1>
+  </div>
+  <div class="well">
+    <table align="center"  border width="100%">
+      <tr>
+        <th>商品名称</th>
+        <th>单价</th>
+        <th>购买数量</th>
+        <th>总价</th>
+        <th>商品属性</th>
+      </tr>
+      <volist name="data" id="da" key="k">
+        <tr>
+          <td>{$da['goods']['goods_name']}</td>
+          <td>{$da['goods_price']}</td>
+          <td>{$da['number']}</td>
+          <td>{$da['number']*$da['goods_price']}</td>
+          <td>{$da['shuxing']}</td>
+        </tr>
+      </volist>
+    </table>
+    <button class="btn btn-primary" type="button" id="back" onclick="history.back()">返回订单列表</button>
+  </div>
+  <!-- footer -->
+  <footer>
+    <hr>
+    <p>© 2017 <a href="javascript:void(0);" target="_blank">ADMIN</a></p>
+  </footer>
+</div>
+</body>

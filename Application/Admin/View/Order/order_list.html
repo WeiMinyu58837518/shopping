@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>订单列表</title>
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/main.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/page.css">
+  <style type="text/css">
+    table img {
+      max-width: 100px;
+    }
+  </style>
+  <script src="__PUBLIC__/Admin/js/jquery-1.8.1.min.js"></script>
+  <script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- 上 -->
+<include file="Common/top"/>
+<!-- 左 -->
+<include file="Common/left" />
+<div class="content">
+  <div class="header">
+    <h1 class="page-title">订单列表</h1>
+  </div>
+  <div class="well">
+    <table align="center"  border width="100%">
+      <tr>
+        <th>订单编号</th>
+        <th>订单金额</th>
+        <th>联系人姓名</th>
+        <th>配送地址</th>
+        <th>联系电话</th>
+      </tr>
+      <volist name="order" id="ord">
+      <tr>
+        <td><a href="__CONTROLLER__/order_goods/id/{$ord['id']}">{$ord['order_sn']}</a></td>
+        <td>{$ord['order_amount']}</td>
+        <td>{$ord['consignee']}</td>
+        <td>{$ord['address']}</td>
+        <td>{$ord['phone']}</td>
+      </tr>
+      </volist>
+    </table>
+  </div>
+  <!-- footer -->
+  <footer>
+    <hr>
+    <p>© 2017 <a href="javascript:void(0);" target="_blank">ADMIN</a></p>
+  </footer>
+</div>
+</body>

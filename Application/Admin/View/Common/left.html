@@ -1,0 +1,25 @@
+<div class="sidebar-nav">
+  <volist name="Think.session.top" key="k" id="top">
+    <div class="fuck">
+      <a href="#guanliyuan{$k}" class="nav-header collapsed" data-toggle="collapse"><i class="icon-exclamation-sign"></i>{$top['auth_name']}</a>
+      <ul id="guanliyuan{$k}" class="nav nav-list collapse in">
+        <volist name="Think.session.second" key="x" id="second">
+          <if condition=" $second['pid'] == $top['id'] ">
+            <li><a href="__MODULE__/{$second['auth_c']}/{$second['auth_a']}">{$second['auth_name']}</a></li>
+          </if>
+        </volist>
+      </ul>
+    </div>
+  </volist>
+</div>
+<script type="text/javascript" src="__PUBLIC__/Home/js/jquery.min.js"></script>
+<script>
+    $(function () {
+        var fuck=$(".fuck");
+        $.each(fuck,function(i,v){
+            if($(v).find("li").length==0){
+                $(v).css("display","none");
+            }
+        })
+    })
+</script>

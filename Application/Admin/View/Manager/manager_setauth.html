@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>后台管理系统</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/main.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap-responsive.min.css">
+</head>
+<body>
+<!-- 上 -->
+<include file="Common/top"/>
+<!-- 左 -->
+<include file="Common/left"/>
+<!-- 右 -->
+<div class="content">
+  <div class="header">
+    <h1 class="page-title">分派权限</h1>
+  </div>
+
+  <div class="well">
+    正在给【{$data.role_name}】分派权限
+    <form action="" method="post">
+      <!-- table -->
+      <table class="table table-bordered table-hover table-condensed">
+        <input type="hidden" name="id" class="" id="id" value="{$id}">
+        <thead>
+        <tr>
+          <th>权限分类</th>
+          <th>权限</th>
+        </tr>
+        </thead>
+        <tbody>
+        <volist name="auth_top" id="top">
+          <tr class="success">
+            <td><input type="checkbox" name="ids[]" value="{$top.id}"<in name="top['id']" value="$data['role_auth_ids']">checked="checked"</in>>{$top.auth_name}
+            </td>
+            <td>
+              <volist name="auth_second" id="second">
+                <if condition=" $top['id'] == $second['pid'] ">
+                  <input type="checkbox" name="ids[]" value="{$second.id}"<in name="second['id']" value="$data['role_auth_ids']">checked="checked"</in>>{$second.auth_name}
+                </if>
+              </volist>
+            </td>
+          </tr>
+        </volist>
+        </tbody>
+      </table>
+      <button class="btn btn-primary" type="button" id="baocun">保存</button>
+    </form>
+  </div>
+  <!-- footer -->
+  <footer>
+    <hr>
+    <p>© 2017 <a href="javascript:void(0);" target="_blank">ADMIN</a></p>
+  </footer>
+</div>
+</body>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/Admin/js/jquery-1.8.1.min.js"></script>
+<script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+<!-- 日期控件 -->
+<script src="__PUBLIC__/Admin/js/calendar/WdatePicker.js"></script>
+<script>
+    $("#baocun").click(function () {
+//        var top=document.getElementsByName("top_id");
+//        var top_id;
+//        for(var i=0;i<top.length;i++){
+//            if(top[i].checked){
+//                top_id[]=top[i];
+//            }
+//        }
+//        var second=document.getElementsByName("second_id");
+//        var second_id;
+//        for(var i=0;i<second.length;i++){
+//            if(second[i].checked){
+//                second_id[]=second[i];
+//            }
+//        }
+//        var ids=$("input[type=checkbox]:checked");
+        var data=$("form").serialize();
+        $.post("__CONTROLLER__/manager_setauth",data,function(a){
+          if(a==1){
+              alert("操作成功");
+              location.href="__CONTROLLER__/manager_name";
+          }else{
+              alert("操作失败");
+          }
+        })
+
+    })
+</script>
+</html>

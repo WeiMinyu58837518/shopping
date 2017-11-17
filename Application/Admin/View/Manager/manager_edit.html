@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>后台管理系统</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/main.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap-responsive.min.css">
+</head>
+<body>
+<!-- 上 -->
+<include file="Common/top" />
+<!-- 左 -->
+<include file="Common/left" />
+<!-- 右 -->
+<div class="content">
+    <div class="header">
+        <h1 class="page-title">管理员编辑</h1>
+    </div>
+
+    <div class="well">
+        <!-- edit form -->
+        <form action="" method="" id="tab">
+            <input type="hidden" name="" class="" id="id" value="{$data.id}">
+            <label>用户名：</label>
+            <input type="text" name="" value="{$data.username}" class="input-xlarge" id="username">
+            <label>昵称：</label>
+            <input type="text" name="" value="{$data.nickname}" class="input-xlarge" id="nickname">
+            <label>邮箱：</label>
+            <input type="text" name="" value="{$data.email}" class="input-xlarge" id="email">
+            <button class="btn btn-primary" type="button" id="tijiao">保存</button>
+        </form>
+    </div>
+    <!-- footer -->
+    <footer>
+        <hr>
+        <p>© 2017 <a href="javascript:void(0);" target="_blank">ADMIN</a></p>
+    </footer>
+</div>
+</body>
+<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+<script src="__PUBLIC__/Admin/js/jquery-1.8.1.min.js"></script>
+<script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+<script>
+    $("#tijiao").click(function () {
+        var data={
+            id:$("#id").val(),
+            username:$("#username").val(),
+            nickname:$("#nickname").val(),
+            email:$("#email").val()
+        }
+        $.post("__CONTROLLER__/manager_edit",data,function (a) {
+            if(a==1){
+                alert("修改成功");
+                location.href="__CONTROLLER__/manager_list";
+            }
+            if(a==2){
+                alert("修改失败");
+            }
+            if(a!=1 && a!=2){
+                alert(a);
+            }
+        })
+    })
+</script>
+</html>

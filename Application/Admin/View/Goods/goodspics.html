@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>管理商品相册</title>
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/main.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/bootstrap-responsive.min.css">
+  <link rel="stylesheet" type="text/css" href="__PUBLIC__/Admin/css/page.css">
+  <style type="text/css">
+    table img {
+      max-width: 100px;
+    }
+  </style>
+  <script src="__PUBLIC__/Admin/js/jquery-1.8.1.min.js"></script>
+  <script src="__PUBLIC__/Admin/js/bootstrap.min.js"></script>
+</head>
+<body>
+<!-- 上 -->
+<include file="Common/top"/>
+<!-- 左 -->
+<include file="Common/left" />
+<div class="content">
+  <div class="header">
+    <h1 class="page-title">商品相册修改</h1>
+  </div>
+  <div class="well">
+    <table align="center" border>
+      <tr>
+        <th>图片</th>
+        <th>操作</th>
+      </tr>
+      <volist name="photo" id="v">
+        <tr>
+          <td><img src="{$v.pics_origin}"></td>
+          <td><a href="javascript:void(0)" class="delete" memeda="{$v.id}">删除</a></td>
+        </tr>
+      </volist>
+    </table>
+  </div>
+  <button class="btn btn-primary" type="button" id="back" onclick="history.back()">返回商品列表</button>
+  <!-- footer -->
+  <footer>
+    <hr>
+    <p>© 2017 <a href="javascript:void(0);" target="_blank">ADMIN</a></p>
+  </footer>
+</div>
+</body>
+<script>
+$(".delete").click(function(){
+    if(confirm("确定删除？")){
+        var id=$(this).attr("memeda");
+        var data={
+            delete_id:id
+        }
+        $.post("__CONTROLLER__/goodspics",data,function(a){
+            if(a==1){
+                alert("删除成功");
+                location.href="__SELF__";
+            }else{
+                alert("删除失败");
+            }
+        })
+    }
+})
+</script>
+</html>

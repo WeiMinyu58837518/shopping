@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+查询结果：
+<table style="border: 1px solid black">
+  <tr>
+    <th>时间</th>
+    <th>进度</th>
+  </tr>
+  <volist name="data" id="v" key="k">
+  <tr style="<if condition=' $k == 1 '>background-color: red</if>">
+    <td>{$v.time}</td>
+    <td>{$v.context}</td>
+  </tr>
+  </volist>
+</table>
+</body>
+</html>
